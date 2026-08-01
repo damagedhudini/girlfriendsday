@@ -204,3 +204,18 @@ font-size:22px;
 line-height:1.8;
 
 }
+#envelopePage,
+#introPage,
+#letterPage,
+#roseScreen{
+    position:relative;
+    z-index:100;
+}
+
+#petals{
+    z-index:1;
+}
+
+.envelope{
+    z-index:200;
+}
