@@ -1,40 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Girlfriend's Day ❤️</title>
+    <title>Happy Girlfriend's Day ❤️</title>
 
-<link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <audio id="bgMusic" loop>
     <source src="music/song.mp3" type="audio/mpeg">
 </audio>
 
+<!-- Animated Background -->
+<div id="stars"></div>
 <div id="petals"></div>
+<div id="hearts"></div>
 
-<!-- ENVELOPE -->
+<!-- ================= ENVELOPE ================= -->
 
-<div id="envelopePage">
+<section id="envelopePage">
 
 <div class="envelope">
 
+<div class="back"></div>
+
+<div class="letterInside">
+
+<h1>For My Love ❤️</h1>
+
+<p>Tap the heart to open</p>
+
+</div>
+
+<div class="front"></div>
+
 <div class="flap"></div>
 
-<div class="letterPreview">
+<div id="seal">
 
-<h1>Happy Girlfriend's Day</h1>
-
-<p>Touch the heart ❤️</p>
+<i class="fa-solid fa-heart"></i>
 
 </div>
 
-<div id="seal">❤</div>
+</div>
+
+</section>
+
+<!-- ================= INTRO ================= -->
+
+<section id="introPage" class="hidden">
+
+<h1 class="mainTitle">
+
+Happy Girlfriend's Day
+
+</h1>
+
+<p class="subtitle">
+
+Every love story is beautiful...
+but ours is my favourite ❤️
+
+</p>
+
+<h2>
+
+Would you like to see your surprise?
+
+</h2>
+
+<div class="buttons">
+
+<button id="yesBtn">
+
+Yes ❤️
+
+</button>
+
+<button id="noBtn">
+
+Maybe Later
+
+</button>
 
 </div>
+
+</section>
+
+<!-- ================= SURPRISE ================= -->
+
+<section id="surprisePage" class="hidden">
+
+<div class="bigHeart">
+
+❤️
+
+</div>
+
+<h1>
+
+Preparing Your Surprise...
+
+</h1>
+
+</section>
+
+<!-- ================= LETTER ================= -->
+
+<section id="letterPage" class="hidden">
+
+<div class="paper">
+
+<img
+src="images/photo.jpg"
+class="photo"
+alt="Our Photo">
+
+<h1>
+
+My Dearest Love ❤️
+
+</h1>
+
+<div id="typedText">
+
+<p>
+
+Dear Love,
+
+Happy Girlfriend's Day.
+
+Today is a celebration of you...
+
+Every smile you give me makes my world brighter.
+
+Every conversation with you becomes one of my favourite memories.
+
+Thank you for making my life happier.
+
+I hope this little surprise reminds you just how special you are.
+
+You will always have a place in my heart.
+
+Forever Yours ❤️
+
+</p>
+
+</div>
+
+<button id="finalBtn">
+
+I Love You ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html></div>
 
 </div>
 
