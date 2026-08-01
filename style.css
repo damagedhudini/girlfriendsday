@@ -47,7 +47,7 @@ body{
 .petal{
 
     position:absolute;
-    font-size:70px;
+    font-size:120px;
     animation:fall linear forwards;
 
 }
