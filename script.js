@@ -121,7 +121,7 @@ yesBtn.onclick = ()=>{
 
         typeLetter();
 
-    },10000);
+    },1000);
 
 }
 
