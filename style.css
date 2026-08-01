@@ -47,7 +47,7 @@ body{
 .petal{
 
     position:absolute;
-    font-size:40px;
+    font-size:70px;
     animation:fall linear forwards;
 
 }
@@ -78,7 +78,7 @@ opacity:0;
 
 position:absolute;
 
-font-size:30px;
+font-size:60px;
 
 animation:floatUp 6s linear forwards;
 
