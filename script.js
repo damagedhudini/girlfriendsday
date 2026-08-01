@@ -1,92 +1,193 @@
-// Falling Petals
+/* ========= ELEMENTS ========= */
 
-const petals=document.getElementById("petals");
+const envelopePage = document.getElementById("envelopePage");
+const introPage = document.getElementById("introPage");
+const surprisePage = document.getElementById("surprisePage");
+const letterPage = document.getElementById("letterPage");
+
+const seal = document.getElementById("seal");
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+
+const petals = document.getElementById("petals");
+const hearts = document.getElementById("hearts");
+
+const music = document.getElementById("bgMusic");
+
+const typed = document.getElementById("typedText");
+const finalBtn = document.getElementById("finalBtn");
+
+/* ========= MUSIC ========= */
+
+music.volume = 0.3;
+
+/* ========= FALLING PETALS ========= */
 
 function createPetal(){
 
-const petal=document.createElement("div");
+    const petal = document.createElement("div");
 
-petal.className="petal";
+    petal.className = "petal";
 
-petal.style.left=Math.random()*100+"vw";
+    petal.innerHTML = "🌹";
 
-petal.style.animationDuration=
-(Math.random()*5+5)+"s";
+    petal.style.left = Math.random()*100+"vw";
 
-petal.style.opacity=Math.random();
+    petal.style.animationDuration =
+        (Math.random()*5+6)+"s";
 
-petals.appendChild(petal);
+    petal.style.fontSize =
+        (18+Math.random()*15)+"px";
 
-setTimeout(()=>{
+    petals.appendChild(petal);
 
-petal.remove();
+    setTimeout(()=>{
 
-},10000);
+        petal.remove();
+
+    },11000);
 
 }
 
 setInterval(createPetal,250);
 
-// Envelope
+/* ========= FLOATING HEARTS ========= */
 
-const seal=document.getElementById("seal");
+function createHeart(){
 
-const envelope=document.getElementById("envelopePage");
+    const heart = document.createElement("div");
 
-const intro=document.getElementById("introPage");
+    heart.className = "heart";
 
-seal.onclick=()=>{
+    heart.innerHTML = "❤️";
 
-envelope.classList.add("hidden");
+    heart.style.left = Math.random()*100+"vw";
 
-intro.classList.remove("hidden");
+    heart.style.bottom = "-30px";
 
-}
+    heart.style.fontSize =
+        (16+Math.random()*20)+"px";
 
-// Surprise
+    hearts.appendChild(heart);
 
-const yes=document.getElementById("yesBtn");
+    setTimeout(()=>{
 
-const no=document.getElementById("noBtn");
+        heart.remove();
 
-const roses=document.getElementById("roseScreen");
-
-const letter=document.getElementById("letterPage");
-
-const music=document.getElementById("bgMusic");
-
-yes.onclick=()=>{
-
-intro.classList.add("hidden");
-
-roses.classList.remove("hidden");
-
-music.play();
-
-let interval=setInterval(()=>{
-
-for(let i=0;i<25;i++){
-
-createPetal();
+    },6000);
 
 }
 
-},150);
+setInterval(createHeart,700);
 
-setTimeout(()=>{
+/* ========= OPEN ENVELOPE ========= */
 
-clearInterval(interval);
+seal.onclick = ()=>{
 
-roses.classList.add("hidden");
+    document.querySelector(".flap").style.transform =
+        "rotateX(180deg)";
 
-letter.classList.remove("hidden");
+    setTimeout(()=>{
 
-},10000);
+        envelopePage.classList.add("hidden");
+
+        introPage.classList.remove("hidden");
+
+    },900);
 
 }
 
-no.onclick=()=>{
+/* ========= YES BUTTON ========= */
 
-alert("Aww... I'll wait ❤️");
+yesBtn.onclick = ()=>{
+
+    introPage.classList.add("hidden");
+
+    surprisePage.classList.remove("hidden");
+
+    music.play();
+
+    for(let i=0;i<150;i++){
+
+        setTimeout(createPetal,i*30);
+
+    }
+
+    setTimeout(()=>{
+
+        surprisePage.classList.add("hidden");
+
+        letterPage.classList.remove("hidden");
+
+        typeLetter();
+
+    },10000);
+
+}
+
+/* ========= NO BUTTON ========= */
+
+const messages=[
+
+"I'll wait ❤️",
+
+"Are you sure? 🥺",
+
+"Please...? ❤️",
+
+"I made this just for you 💕"
+
+];
+
+let index=0;
+
+noBtn.onclick=()=>{
+
+    alert(messages[index]);
+
+    index++;
+
+    if(index>=messages.length){
+
+        index=0;
+
+    }
+
+}
+
+/* ========= TYPEWRITER ========= */
+
+const originalText =
+typed.innerText;
+
+typed.innerHTML="";
+
+let i=0;
+
+function typeLetter(){
+
+    if(i<originalText.length){
+
+        typed.innerHTML += originalText.charAt(i);
+
+        i++;
+
+        setTimeout(typeLetter,35);
+
+    }
+
+}
+
+/* ========= FINAL BUTTON ========= */
+
+finalBtn.onclick=()=>{
+
+    for(let i=0;i<250;i++){
+
+        setTimeout(createHeart,i*20);
+
+    }
+
+    alert("❤️ Happy Girlfriend's Day ❤️\n\nI Love You Forever.");
 
 }
